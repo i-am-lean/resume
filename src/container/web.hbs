@@ -1,0 +1,126 @@
+<div>
+	{{#with web}}
+	<main>
+		<section>
+			<center>{{> title data='Web languages'}}</center>
+			<br>
+			<ul>
+				{{#each languages}}
+					<li>
+						
+						<div>
+							<center>
+								<dl>
+								<dt><b>{{name}} ({{version}})</b></dt>
+								<dd>{{description}}</dd>
+							</dl>
+							</center>
+						</div>
+						<div>
+							{{#if elements}}
+							<br>
+							<em>Elements:</em>
+							<ul>
+								{{#each elements}}
+								<li>
+									<div>
+										{{name}} ({{description}})
+									</div>
+
+									<div>
+										{{#if attributes}}
+											<details>
+												<summary>Attributes</summary>
+												<ul>
+													{{#each attributes}}
+													<li>
+														<div>
+															{{name}} ({{description}})
+														</div>
+													</li>
+													{{/each}}
+												</ul>
+											</details>
+											<br>
+											
+										{{/if}}
+									</div>
+								</li>
+								{{/each}}
+							</ul>
+							{{/if}}
+						</div>
+						<div>
+							{{#if properties}}
+							<br>
+								<em>Properties:</em>
+								<ul>
+									{{#each properties}}
+									<li>
+										<div>
+											{{name}} ({{description}})
+										</div>
+										
+										<div>
+											<details>
+												<summary>Values</summary>
+												<ul>
+													{{#each values}}
+													<li>
+														{{value}} ({{description}})
+													</li>
+													{{/each}}
+												</ul>
+											</details>
+											<br>
+										</div>
+									</li>
+									{{/each}}
+								</ul>
+							{{/if}}
+						</div>
+
+						<div>
+							{{#if functions}}
+							<br>
+								<em>Functions:</em>
+								<ul>
+									{{#each functions}}
+									<li>
+										<div>
+											{{name}} ({{description}})
+										</div>
+										<div>
+											<details>
+												<summary>Parameters</summary>
+												<ul>
+													{{#each parameters}}
+														<li>
+															<div>
+																<dl>
+																	<dt>{{name}} ({{type}})</dt>
+																	<dd>{{description}}</dd>
+																</dl>
+															</div>
+														</li>
+													{{/each}}
+												</ul>
+											</details>
+											<br>
+										</div>
+									</li>
+									{{/each}}
+								</ul>
+							{{/if}}
+						</div>
+
+					</li>
+					<br>
+					<hr>
+					
+				{{/each}}
+			</ul>
+		</section>
+	</main>
+	{{/with}}
+</div>

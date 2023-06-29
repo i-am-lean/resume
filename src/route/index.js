@@ -36,16 +36,10 @@ var footer = {
   },
 }
 
-
-router.get('/', function (req, res) {
- 
-})
+router.get('/', function (req, res) {})
 
 router.get('/summary', function (req, res) {
-  
   res.render('summary', {
-   
-
     page: {
       title: 'Resume | Summary',
     },
@@ -69,10 +63,7 @@ router.get('/summary', function (req, res) {
 })
 
 router.get('/skills', function (req, res) {
- 
   res.render('skills', {
-    
-
     page: {
       title: 'Resume | Skills',
     },
@@ -133,8 +124,6 @@ router.get('/skills', function (req, res) {
 
 router.get('/education', function (req, res) {
   res.render('education', {
-    
-
     page: {
       title: 'Resume | Education',
     },
@@ -337,7 +326,6 @@ router.get('/person', function (req, res) {
   })
 })
 
-
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
@@ -419,11 +407,10 @@ router.get('/program', function (req, res) {
           },
         ],
       },
-     })
+    },
   })
-    
+})
 
-      
 router.get('/bio', function (req, res) {
   res.render('bio', {
     layout: 'bio',
@@ -515,18 +502,14 @@ router.get('/bio', function (req, res) {
         'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
       year: 'Late 15th to early 16th century',
       field: 'Invention',
-
     },
   })
 })
 
-
-
 router.get('/web', function (req, res) {
-  
   res.render('web', {
     layout: 'basic',
-    
+
     web: {
       languages: [
         {
@@ -650,5 +633,87 @@ router.get('/web', function (req, res) {
     },
   })
 })
+
+router.get('/js', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('js', {
+    layout: 'basic',
+
+    name: 'JavaScript',
+    description:
+      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+    history: {
+      year: 1995,
+      founder: 'Brendan Eich',
+    },
+    types: [
+      'Number',
+      'String',
+      'Boolean',
+      'Null',
+      'Undefined',
+      'Symbol',
+      'Object',
+    ],
+    syntax: {
+      variables: ['var', 'let', 'const'],
+      functions: ['function'],
+      conditionals: ['if', 'else', 'switch'],
+      loops: ['for', 'while', 'do-while'],
+      classes: ['class'],
+    },
+    features: [
+      'First-class functions',
+      'Closures',
+      'Dynamic typing',
+      'Prototype-based inheritance',
+      'Asynchronous programming with Promises and async/await',
+      'Modules with import/export statements',
+    ],
+    libraries: [
+      'jQuery',
+      'React',
+      'Angular',
+      'Vue',
+      'Node.js',
+      'Express.js',
+      'Lodash',
+      'Moment.js',
+    ],
+    tools: [
+      'Babel',
+      'Webpack',
+      'ESLint',
+      'Jest',
+      'Mocha',
+      'Chai',
+      'Selenium',
+      'Cypress',
+    ],
+    community: [
+      {
+        name: 'Stack Overflow',
+        type: 'forum',
+      },
+      {
+        name: 'JavaScript Weekly',
+        type: 'newsletter',
+      },
+      {
+        name: 'The Changelog',
+        type: 'podcast',
+      },
+      {
+        name: 'CSS-Tricks',
+        type: 'blog',
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
 
 module.exports = router

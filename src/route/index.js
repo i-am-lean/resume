@@ -36,16 +36,10 @@ var footer = {
   },
 }
 
-
-router.get('/', function (req, res) {
- 
-})
+router.get('/', function (req, res) {})
 
 router.get('/summary', function (req, res) {
-  
   res.render('summary', {
-   
-
     page: {
       title: 'Resume | Summary',
     },
@@ -69,10 +63,7 @@ router.get('/summary', function (req, res) {
 })
 
 router.get('/skills', function (req, res) {
- 
   res.render('skills', {
-    
-
     page: {
       title: 'Resume | Skills',
     },
@@ -133,8 +124,6 @@ router.get('/skills', function (req, res) {
 
 router.get('/education', function (req, res) {
   res.render('education', {
-    
-
     page: {
       title: 'Resume | Education',
     },
@@ -337,7 +326,6 @@ router.get('/person', function (req, res) {
   })
 })
 
-
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
@@ -419,11 +407,10 @@ router.get('/program', function (req, res) {
           },
         ],
       },
-     })
+    },
   })
-    
+})
 
-      
 router.get('/bio', function (req, res) {
   res.render('bio', {
     layout: 'bio',
@@ -515,18 +502,14 @@ router.get('/bio', function (req, res) {
         'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
       year: 'Late 15th to early 16th century',
       field: 'Invention',
-
     },
   })
 })
 
-
-
 router.get('/web', function (req, res) {
-  
   res.render('web', {
     layout: 'basic',
-    
+
     web: {
       languages: [
         {
@@ -649,6 +632,105 @@ router.get('/web', function (req, res) {
       ],
     },
   })
+})
+
+router.get('/car', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('car', {
+    layout: 'basic',
+
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'silver',
+    features: {
+      interior: {
+        seats: {
+          material: 'leather',
+          color: 'black',
+          heated: true,
+          ventilated: true,
+        },
+        dashboard: {
+          material: 'plastic',
+          color: 'black',
+          display: {
+            type: 'LCD',
+            size: 10.1,
+            resolution: '1280x720',
+            touchscreen: true,
+          },
+        },
+        audio: {
+          system: 'JBL',
+          speakers: 8,
+          subwoofer: true,
+          bluetooth: true,
+          USB: true,
+        },
+      },
+      exterior: {
+        wheels: {
+          size: 18,
+          type: 'alloy',
+          color: 'silver',
+        },
+        headlights: {
+          type: 'LED',
+          brightness: 'high',
+          automatic: true,
+        },
+        sunroof: {
+          type: 'panoramic',
+          size: 'large',
+          automatic: true,
+        },
+      },
+      safety: {
+        airbags: {
+          front: 2,
+          side: 2,
+          knee: 2,
+          rear: 2,
+        },
+        assistance: {
+          blind_spot_monitoring: true,
+          rear_cross_traffic_alert: true,
+          lane_departure_warning: true,
+          adaptive_cruise_control: true,
+          collision_warning: true,
+        },
+      },
+    },
+    engine: {
+      type: 'gasoline',
+      displacement: 2.5,
+      horsepower: 206,
+      torque: 186,
+      transmission: {
+        type: 'automatic',
+        gears: 8,
+      },
+    },
+    fuel_economy: {
+      city: 28,
+      highway: 39,
+      combined: 32,
+    },
+    price: {
+      base: 25900,
+      destination: 995,
+      options: {
+        navigation: 1200,
+        moonroof: 800,
+        premium_paint: 595,
+      },
+      total: 28990,
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
 })
 
 module.exports = router

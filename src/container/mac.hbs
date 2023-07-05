@@ -1,0 +1,285 @@
+<div>
+  <main>
+    <div class='demo'>
+      <div class='container'>
+        <div class='row text-center'>
+          <h1 class='heading-title'>{{name}}</h1>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-4 col-sm-6'>
+            <div class='pricingTable'>
+              <div class='pricingTable-header'>
+                <span class='heading'>
+                  {{description}}
+                </span>
+              </div>
+              <div class='pricing-plans'>
+                <span class='price-value'><i
+                    class='fa fa-usd'
+                  ></i><span>{{price}}</span></span>
+                <span class='subtitle'>{{category}}</span>
+              </div>
+              <div class='pricingContent'>
+                {{#with features}}
+                  <h3>Feautures</h3>
+                  <div>
+                    {{#with processor}}
+                      <details>
+                        <summary>Processor</summary>
+                        <table>
+                          <tr>
+                            <td>
+                              Processor:
+                            </td>
+                            <td>
+                              {{brand}}
+                              {{model}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Speed:
+                            </td>
+                            <td>
+                              {{speed}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Cores:
+                            </td>
+                            <td>
+                              {{cores}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Cache:
+                            </td>
+                            <td>
+                              {{cache}}
+                            </td>
+                          </tr>
+                        </table>
+                      </details>
+                    {{/with}}
+                  </div>
+                  <div>
+                    {{#with memory}}
+                      <details>
+                        <summary>Memory</summary>
+                        <table>
+                          <tr>
+                            <td>
+                              Type:
+                            </td>
+                            <td>
+                              {{type}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Size:
+                            </td>
+                            <td>
+                              {{size}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Speed:
+                            </td>
+                            <td>
+                              {{speed}}
+                            </td>
+                          </tr>
+                        </table>
+                      </details>
+                    {{/with}}
+                  </div>
+
+                  <div>
+                    {{#with storage}}
+                      <details>
+                        <summary>Storage</summary>
+                        <table>
+                          <tr>
+                            <td>
+                              Type:
+                            </td>
+                            <td>
+                              {{type}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Size:
+                            </td>
+                            <td>
+                              {{size}}
+                            </td>
+                          </tr>
+                        </table>
+                      </details>
+                    {{/with}}
+                  </div>
+
+                  <div>
+                    {{#with display}}
+                      <details>
+                        <summary>Display</summary>
+                        <table>
+                          <tr>
+                            <td>
+                              Size:
+                            </td>
+                            <td>
+                              {{size}}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              Resolution:
+                            </td>
+                            <td>
+                              {{resolution}}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              Technology:
+                            </td>
+                            <td>
+                              {{technology}}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              Color space:
+                            </td>
+                            <td>
+                              {{color_space}}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              Brightness:
+                            </td>
+                            <td>
+                              {{brightness}}
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              Refresh rate:
+                            </td>
+                            <td>
+                              {{refresh_rate}}
+                            </td>
+                          </tr>
+                        </table>
+                      </details>
+                    {{/with}}
+                  </div>
+
+                  <div>
+                    {{#with graphics}}
+                        <details>
+                            <summary>Graphics</summary>
+                            <table>
+                                <tr>
+                                    <td>Brand:</td>
+                                    <td>{{brands}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Model:
+                                    </td>
+                                    <td>
+                                        {{model}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Memory
+                                    </td>
+                                    <td>
+                                        {{memory}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+                    {{/with}}
+                  </div>
+
+                  <div>
+                    <h4>Ports</h4>
+                        <ul>
+                            {{each ports}}
+                                <li>
+                                    <div>
+                                        Type: {{type}}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        Count: {{count}}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                       <ul>
+                                            {{#each features}}
+                                            <li>
+                                                
+                                                    {{#if features includeZero=true}}
+                                                    {{this}}
+                                                    {{/if}}
+                                                
+                                            </li>
+                                            {{/each}}
+                                        </ul>  
+                                    </div>
+                                </li>
+                                        
+                                
+                            
+                            {{/each }}
+                        </ul>
+                    
+                    
+                  </div>
+
+                  <ul>
+                    <li><b>50GB</b> Disk Space</li>
+                    <li><b>50</b>Email Accounts</li>
+                    <li><b>50GB</b> Monthly Bandwidth</li>
+                    <li><b>10</b> subdomains</li>
+                    <li><b>15</b> Domains</li>
+                  </ul>
+                {{/with}}
+              </div><!-- /  CONTENT BOX-->
+
+              <div
+                class='pricingTable-sign-up'
+              ><!-- BUTTON BOX-->
+                <a
+                  href='#'
+                  class='btn btn-block btn-default'
+                >buy now</a>
+              </div><!-- BUTTON BOX-->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>

@@ -20,6 +20,10 @@
                   ></i><span>{{price}}</span></span>
                 <span class='subtitle'>{{category}}</span>
               </div>
+
+            <hr>
+            <br>
+
               <div class='pricingContent'>
                 {{#with features}}
                   <h3>Feautures</h3>
@@ -65,6 +69,9 @@
                       </details>
                     {{/with}}
                   </div>
+
+                <br>
+
                   <div>
                     {{#with memory}}
                       <details>
@@ -99,6 +106,8 @@
                     {{/with}}
                   </div>
 
+                  <br>
+
                   <div>
                     {{#with storage}}
                       <details>
@@ -124,6 +133,8 @@
                       </details>
                     {{/with}}
                   </div>
+
+                  <br>
 
                   <div>
                     {{#with display}}
@@ -188,6 +199,8 @@
                     {{/with}}
                   </div>
 
+                  <br>
+
                   <div>
                     {{#with graphics}}
                         <details>
@@ -207,7 +220,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        Memory
+                                        Memory:
                                     </td>
                                     <td>
                                         {{memory}}
@@ -218,10 +231,13 @@
                     {{/with}}
                   </div>
 
+                  <br>
+
                   <div>
-                    <h4>Ports</h4>
+                    <details>
+                        <summary>Ports</summary>
                         <ul>
-                            {{each ports}}
+                            {{#each ports}}
                                 <li>
                                     <div>
                                         Type: {{type}}
@@ -234,35 +250,148 @@
                                 </li>
                                 <li>
                                     <div>
-                                       <ul>
-                                            {{#each features}}
-                                            <li>
-                                                
-                                                    {{#if features includeZero=true}}
+                                        {{#if features includeZero=true}}
+                                        <details>
+                                            <summary>Feautures:</summary>
+                                            <ul>
+                                                {{#each features}}
+                                                <li> 
+
                                                     {{this}}
-                                                    {{/if}}
-                                                
-                                            </li>
-                                            {{/each}}
-                                        </ul>  
+    
+                                                </li>
+                                                {{/each}}
+                                            </ul>    
+                                        </details>
+                                        {{/if}}  
                                     </div>
+                                    <br>    
                                 </li>
-                                        
-                                
-                            
                             {{/each }}
                         </ul>
+                    </details>
+                        
                     
                     
                   </div>
 
-                  <ul>
-                    <li><b>50GB</b> Disk Space</li>
-                    <li><b>50</b>Email Accounts</li>
-                    <li><b>50GB</b> Monthly Bandwidth</li>
-                    <li><b>10</b> subdomains</li>
-                    <li><b>15</b> Domains</li>
-                  </ul>
+                  <br>
+
+                  <div>
+                    {{#with battery}}
+                        <details>
+                            <summary>Battery</summary>
+                            <table>
+                                <tr>
+                                    <td>Type:</td>
+                                    <td>{{type}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Capacity:
+                                    </td>
+                                    <td>
+                                        {{Capacity}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Life:
+                                    </td>
+                                    <td>
+                                        {{life}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+                    {{/with}}
+                  </div>
+
+                  <br>
+
+                  <div>
+                        <details>
+                            <summary>Weight</summary>
+                            <table>
+                                <tr>
+                                    <td>Laptop:</td>
+                                    <td>{{weight}}</td>
+                                </tr>
+                            </table>
+                        </details>
+                  </div>
+
+                  <br>
+
+                  <div>
+                    {{#with dimensions}}
+                        <details>
+                            <summary>Dimensions</summary>
+                            <table>
+                                <tr>
+                                    <td>Height:</td>
+                                    <td>{{height}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Width:
+                                    </td>
+                                    <td>
+                                        {{width}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Depth:
+                                    </td>
+                                    <td>
+                                        {{depth}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </details>
+                    {{/with}}
+                  </div>
+
+                  <br>
+
+                  <div>
+                        <details>
+                            <summary>Operating system</summary>
+                            <table>
+                                <tr>
+                                    <td>{{operating_system}}</td>
+                                </tr>
+                            </table>
+                        </details>
+                  </div>
+
+                  <br>
+
+                <div>
+                    <details>
+                        <summary>Accessories</summary>
+                        <ul>
+                            {{#each accessories}}
+                                <li>
+                                    <div>
+                                        Name: {{name}}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        Price: {{price}}
+                                    </div>
+                                </li>
+                                <br>
+                            {{/each}}    
+                        </ul>
+                    </details> 
+                </div>
+
+                <br>
+                <hr>
+
                 {{/with}}
               </div><!-- /  CONTENT BOX-->
 
@@ -275,6 +404,7 @@
                 >buy now</a>
               </div><!-- BUTTON BOX-->
             </div>
+            <hr>
           </div>
 
         </div>

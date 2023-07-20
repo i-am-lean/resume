@@ -1,0 +1,195 @@
+<div>
+  <main>
+    <section>
+		<div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+			<center>
+				<div class="card-header">{{name}}</div>
+				<div class="card-body">
+				<p class="card-text">
+					{{description}}
+					<hr>
+					{{#with history}}
+						{{year}} by: {{founder}}
+					{{/with}}
+				</p>
+			</center>
+		</div>
+    </section>
+
+	<br>
+	<hr>
+
+	<section>
+
+		<div class="accordion" id="accordionPanelsStayOpenExample">
+		<div class="accordion-item">
+		<h2 class="accordion-header">
+      	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        	Types:
+      	</button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+		<ul>
+			{{#each types}}
+				<li>
+					{{this}}
+				</li>
+			{{/each}}
+		</ul>
+	 </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+       Syntax:
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+		{{#with syntax}}
+			<div class="accordion-body">
+				 <h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+					      Variables
+						  </button>
+				</h3>
+				<ul>
+					{{#each variables}}
+						<li>
+							{{this}}
+						</li>
+					{{/each}}
+				</ul>
+				<br>
+				 <h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+					      Functions
+					</button>
+				</h3>
+				<ul>
+					{{#each functions}}
+						<li>
+							{{this}}
+						</li>
+					{{/each}}
+				</ul>
+				<br>
+				 <h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+					      Conditionals
+					</button>
+				</h3>
+				<ul>
+					{{#each conditionals}}
+						<li>
+							{{this}}
+						</li>
+					{{/each}}
+				</ul>
+				<br>
+				 <h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+					      Loops
+					</button>
+				</h3>
+				<ul>
+					{{#each loops}}
+						<li>
+							{{this}}
+						</li>
+					{{/each}}
+				</ul>
+				<br>
+				 <h3 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+					      Classes
+					</button>
+				</h3>
+				<ul>
+					{{#each classes}}
+						<li>
+							{{this}}
+						</li>
+					{{/each}}
+				</ul>
+				<br>
+	  	{{/with}}
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Feautures:
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+		<ul>
+			{{#each features}}
+			<li>{{this}}</li>
+			{{/each}}
+		</ul>
+	  </div>
+    </div>
+  </div>
+
+   <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Libraries:
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+		<ul>
+			{{#each libraries}}
+			<li>{{this}}</li>
+			{{/each}}
+		</ul>
+	  </div>
+    </div>
+
+	<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Tools:
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+		<ul>
+			{{#each tools}}
+				<li>{{this}}</li>
+			{{/each}}
+		</ul>
+	  </div>
+    </div>
+	</div>
+
+	<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Community:
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+		<ul>
+			{{#each community}}
+			<li>{{name}} ({{type}})</li>
+			{{/each}}
+		</ul>
+	  </div>
+    </div>
+
+  
+
+	</section>
+
+	
+  </main>
+</div>

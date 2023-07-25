@@ -7,7 +7,7 @@
 				<div>
 					<table class="col-12 gx-2 gy-1">
 						<thead>
-							<ul>
+							
 								{{#each links}}	
 									<a class="btn btn-link " href="{{href}}">{{text}}</a>		
 								{{/each}}
@@ -15,7 +15,7 @@
 								{{#with button}}
 									<a href="{{href}}" class="btn btn-primary">{{text}}</a>
 								{{/with}}
-							</ul>
+							
 							
 						</thead>	
 					</table>
@@ -41,12 +41,12 @@
 
 		<hr>
 
-		<section class="col-12">
+		<section class="row">
 			{{#with city}}
 				<div>
 					<h2 class="uppercase card-title gx-3">{{title}}</h2>
 						<div>
-							<ul>
+							
 								{{#each cards}}
 									
 									<div class="card col-5 g-1">
@@ -69,7 +69,7 @@
 									</div>
 									
 								{{/each}}
-							</ul>
+							
 						</div>
 				</div>	
 			{{/with}}

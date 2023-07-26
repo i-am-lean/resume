@@ -1,0 +1,117 @@
+<div>
+  <main>
+	<div class="text-bg-primary p-3">
+		<section>
+			<p class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px">
+				{{name}}
+			</p>
+		</section>
+		<br>
+		<hr>
+		
+		<section>
+			<div>
+				{{> title data='Users'}}
+				<ul>
+					{{#each users}}
+					<li>
+						<div class="card" style="width: 18rem;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<p class="card-text">
+									ID: {{id}} <br>
+									Name: {{name}} ({{gender}}), {{age}} years old <br>
+									Friends:
+								</p>
+								<div>
+									<ul>
+										{{#each friends}}
+										<li>
+											<div class="card" style="width: 18rem;">
+												<img src="..." class="card-img-top" alt="...">
+												<div class="card-body">
+													<p class="card-text">
+														ID: {{id}} <br>
+														Name: {{name}} ({{gender}}), {{age}} years old <br>
+														<br>
+														Mutual friends:
+													</p>
+													<div>
+														<ul>
+															{{#each mutual_friends}}
+																<li>
+																	<div class="card" style="width: 18rem;">
+																		<img src="..." class="card-img-top" alt="...">
+																		<div class="card-body">
+																			<p class="card-text">
+																				ID: {{id}} <br>
+																				Name: {{name}} ({{gender}}), {{age}} years old
+																			</p>
+																		</div>
+																	</div>
+																</li>
+															{{/each}}
+														</ul>
+													</div>
+													<br>
+													<div>
+														<ul>
+															{{#each groups}}
+																<li>
+																	<div class="row">
+																		<div class="col-sm-6 mb-3 mb-sm-0">
+																			<div class="card">
+																			<div class="card-body">
+																				<h5 class="card-title">{{name}} (ID:{{id}})</h5>
+																				<p class="card-text"><q>{{description}}</q></p>
+																				<a href="#" class="btn btn-primary">Go</a>
+																			</div>
+																			</div>
+																		</div>
+																	</div>
+																</li>
+															{{/each}}
+														</ul>
+													</div>
+													
+
+												</div>
+											</div>
+											<br>	
+										</li>
+										{{/each}}
+									</ul>
+								</div>
+								<div>
+									<ul>
+										{{#each groups}} 
+											<li>
+												<div class="row">
+													<div class="col-sm-6 mb-3 mb-sm-0">
+														<div class="card">
+														<div class="card-body">
+															<h5 class="card-title">{{name}} (ID:{{id}})</h5>
+															<p class="card-text"><q>{{description}}</q></p>
+															<a href="#" class="btn btn-primary">Go</a>
+														</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										{{/each}}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+		</section>
+
+		<hr>
+
+		
+	</div>
+  </main>
+</div>

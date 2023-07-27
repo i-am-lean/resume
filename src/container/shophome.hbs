@@ -1,0 +1,132 @@
+<div class="row col-12">
+	<main>
+
+		<div class="card col-12">
+			{{#with navigation}}
+				<div class="nav text-center col-12 g-5 m-1 pe-2">
+					{{#each links}}
+						<div class="nav-item col-4 g-3">
+							<a href="{{href}}" class="nav-link active">{{text}}</a>
+						</div>
+					{{/each}}
+				</div>
+			{{/with}}
+		</div>
+
+		<hr class="my-3">
+
+		<div class="row col-12">
+			{{#with newsBlock}}
+				<p class="text-center text-capitalize"><b>{{title}}</b></p>
+
+				{{#each cards}}
+					<div class="card card-center text-bg-dark col-3 g-1 p-1">
+						<div class="card-header">
+							{{title}}
+							{{#if isNew includeZero=true}}
+								<div class="badge text-bg-success">New</div>
+							{{/if}}
+
+							{{#if isTop includeZero=true}}
+								<div class="badge text-bg-danger">Top</div>
+							{{/if}}
+						</div>
+						<div class="card-body">
+							{{description}}
+						</div>
+					</div>
+				{{/each}}
+			{{/with}}
+		</div>
+
+		<hr class="my-3">
+
+		<div class="row col-12">
+			{{#with goodsBlock}}
+				<div class="row col-12">
+				{{#each tabs}}
+					<div class="nav col-2 p-1 m-4">
+						<div class="nav-tabs">
+
+							<a href="#" class="nav-item
+								{{#if isActive includeZero=true}}
+								nav-link active
+								{{/if}}
+
+								{{#if isDisabled includeZero=true}}
+								nav-link disabled
+								{{/if}}
+
+								text-center p-1">{{text}}</a>
+						</div>
+
+					</div>	
+				{{/each}}
+				</div>
+
+				{{#each cards}}
+					<div class="card text-bg-light col-3 g-5 m-1">
+					<img class="card-img-top px-1 py-4" src="{{image}}" alt="Proguct photo">
+						<div class="card-body">
+							<h5 class="card-title">{{title}}
+								<span class="badge
+									{{#if isHot includeZero=true}}
+								text-bg-warning"
+									{{/if}}>Hot</span>
+
+								<span class="badge
+									{{#if isNew includeZero=true}}
+								text-bg-success"
+									{{/if}}>New</span>
+							</h5>
+							<p class="card-body text-capitalize p-1">{{description}}</p>
+
+						</div>
+					</div>
+				{{/each}}
+
+			{{/with}}
+		</div>
+
+		<hr class="my-3">
+
+		<div class="row col-12">
+			{{#with subscribe}}
+				<div class="card text-bg-dark col-12 p-3">
+					<h2 class="capitalize">{{header}}</h2>
+					<p class="lowercase">{{description}}</p>
+					{{#each buttons}}
+						<a href="{{link}}" class="btn btn-primary col-3 g-5 m-3">{{text}}</a>
+					{{/each}}
+				</div>
+			{{/with}}
+		</div>
+
+		<hr class="my-3">
+
+		<div class="row col-12">
+			{{#with service}}
+				<div class="card text-bg-success text-center px-3">
+					<h2 class="text-capitalize">{{title}}</h2>
+					<p class="text-lowercase">{{description}}</p>
+					{{#each buttons}}
+						<center>
+							<a href="{{link}}" class="btn btn-primary col-2 mt-2">{{text}}</a>
+						</center>
+					{{/each}}
+				</div>
+			{{/with}}
+		</div>
+
+		<hr class="my-3">
+
+		<div class="row col-12">
+			{{#each footer}}
+			<div class="badge col-1 g-5 p-3">
+				<a href="{{link}}" class="btn btn-link col-2">{{text}}</a>
+			</div>
+				
+			{{/each}}
+		</div>
+	</main>
+</div>

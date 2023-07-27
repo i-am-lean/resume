@@ -2,7 +2,7 @@
 	{{#with program}}
 		<main>
 			<div>
-				<section>
+				<section class="mb-5">
 					{{#with excursion}}
 						<center>
 							<b>{{> title data='Excursion'}}</b>																			
@@ -15,10 +15,10 @@
 								<div>{{date}}</div>						
 						</center>
 
-						<br>
-						<hr>
+				
+						<hr class="my-5">
 
-						<section>
+						<section class="mb-5">
 							<center><h2>{{> title data= 'Program'}}</h2></center>
 							<ul>
 								{{#each program}}
@@ -26,9 +26,9 @@
 									<li>
 										<div><b>{{name}}</b></div>
 										<div>{{type}} (Duration: {{duration}})</div>
-										<div>
+										<div class="mx-5">
 											{{#with details}}
-											<br>
+											
 												{{#if museum includeZero=true}}
 													<details>
 														<summary><b><em>Some details</em></b></summary>
@@ -67,11 +67,11 @@
 															</div>
 													</details>	
 												{{/if}}
-												<br>
+												
 
 												
 
-												<br>
+												
 
 												<div>
 													<b>Guide:</b>

@@ -1,4 +1,11 @@
 html {
+
+  max-width: 10000px;
+}
+
+/* 
+body {
+=======
   max-width: 1000px;
 }
 

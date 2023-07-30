@@ -1,0 +1,41 @@
+<div class="row col-12">
+
+    <div class="col-3 g-5 m-1">
+        <div class="col-12">
+            
+                <p class="card-body text-capitalize p-1">{{number}}</p>
+                <h4 class="card-title">{{status}}</h4>
+            
+        </div>	
+    </div>	
+
+    <div class="col-3 g-5 m-1">
+        <div class="col-12">
+            {{#with amount}}
+                <p class="card-body text-capitalize p-1">{{title}}</p>
+                <h4 class="card-title">{{value}}</h4>
+            {{/with}}
+        </div>	
+    </div>	
+
+    <div class="col-1 g-1">
+        <div class="col-12">
+            {{#each images}}
+                <img class="card-img-top px-1 py-4" src="{{this}}">
+            {{/each}}
+        </div>	
+    </div>
+
+    <div class="col-1 g-5 m-1">
+        <div class="col-12">
+            {{#with button}}
+                <a href="{{link}}" class="btn
+                {{#if isPrimary}} btn-primary {{/if}}
+                btn-sm m-1">{{text}}</a>
+            {{/with}}
+        </div>
+    </div>		
+</div>
+
+
+

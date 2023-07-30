@@ -29,43 +29,9 @@
 		<hr class="row col-12 my-3">
 	</div>
 
-	<div class="row col-12">
+	<div class="row col-12 g-1">
 		{{#each goodsBlock}}
-			<div class="card col-12 g-5 p-2 my-2">
-				<div class="col-2 g-1">
-					<div class="col-12">
-						<img class="card-img-top px-1 py-4" src="{{image}}" alt="{{name}}">
-					</div>	
-				</div>
-				<div class="col-3 g-5 m-1">
-					<div class="col-12">
-						<h5 class="card-title">{{name}}</h5>
-						<p class="card-body text-capitalize p-1">{{description}}</p>
-					</div>
-				</div>	
-				<div class="col-3 g-5 m-1">
-					<div class="col-12">
-						{{#with price}}
-							<p class="card-body text-capitalize p-1">{{title}}</p>
-							<h4 class="card-title">{{value}}</h4>
-						{{/with}}
-					</div>	
-				</div>		
-				<div class="col-3 g-5 m-1">
-					<div class="col-12">
-						<p class="card-body text-lowercase p-1">{{amount}}</p>	
-					</div>
-				</div>			
-				<div class="col-3 g-5 m-1">
-					<div class="col-12">
-						{{#each buttons}}
-							<button class="btn
-							{{#if isPrimary}} btn-primary {{/if}}
-							{{#if isDanger}} btn-outline-danger {{/if}} btn-sm m-1">{{text}}</button>
-						{{/each}}
-					</div>
-				</div>			
-			</div>			
+			{{> shopGoodsItem}}			
 		{{/each}}
 	</div>
 
@@ -155,3 +121,4 @@
 			{{/each}}
 		</div>
 </main>
+

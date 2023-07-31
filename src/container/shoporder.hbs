@@ -237,15 +237,14 @@
 				<div>
 					<hr class="col-8">
 				</div>
-
-				<div class="row col-8">
-					{{#each footer}}
-						<div class="badge col-1 g-5 p-3">
-							<a href="{{link}}" class="btn btn-link col-2">{{text}}</a>
-						</div>	
-					{{/each}}
-				</div>
+			<div class="row col-12">
+				{{#each footer}}
+					{{> footer_shop}}
+				{{/each}}
 			</div>
+				
+			</div>
+			
 			
 
 

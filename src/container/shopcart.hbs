@@ -114,11 +114,9 @@
 	</div>
 
 	<div class="row col-12">
-			{{#each footer}}
-			<div class="badge col-1 g-5 p-3">
-				<a href="{{link}}" class="btn btn-link col-2">{{text}}</a>
-			</div>	
-			{{/each}}
-		</div>
+		{{#each footer}}
+			{{> footer_shop}}
+		{{/each}}
+		
 </main>
 

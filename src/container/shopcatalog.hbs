@@ -1,0 +1,135 @@
+<main>
+
+	{{!-- навігація звичайна --}}
+	<div class="row col-12 card">
+		{{#with navigation}}
+			<div class="nav text-center col-12 g-5 m-1 pe-2">
+				{{#each links}}
+					<div class="nav-item col-4 g-3">
+						<a href="{{href}}" class="nav-link active">{{text}}</a>
+					</div>
+				{{/each}}
+			</div>
+		{{/with}}
+	</div>
+
+	<div class="row col-12">
+		
+		<ol class="breadcrumb">
+			{{#each breadcrumb}}
+				<li class="breadcrumb-item">
+					<a href="{{url}}" class="{{#if url includeZero=true}} active {{else}} disabled {{/if}}">{{name}}</a>
+				</li>
+			{{/each}}
+		</ol>	
+	</div>
+
+	<h1 class="col-12 m-5">{{header}}</h1>
+
+	<div class="row col-12">
+		{{#each sortBlock}}
+			<div class="col-3 g-2">
+				{{> select}}
+			</div>
+		{{/each}}
+	</div>
+
+	<section class="row col-12 g-1 p-2">
+		<div class="card row col-4 my-3">
+			
+			<section class="col-12">
+				{{#with filterBlock}}
+					{{#with sellers}}
+						<p>{{title}}</p>
+						{{#each list}}
+							<div class="form-check">
+								<label class="form-check-label">{{value}}</label>
+								<input name="food" type="checkbox" class="form-check-input">
+							</div>
+						{{/each}}
+					{{/with}}
+
+					<hr>
+
+					{{#with brands}}
+						<p>{{title}}</p>
+
+						{{#with input}}
+							<input class="col-12 form-control" placeholder="{{placeholder}}">
+						{{/with}}
+
+						{{#each options}}
+							<div class="form-check">
+								<label class="form-check-label">{{value}}</label>
+								<input name="food" type="checkbox" class="form-check-input">
+							</div>
+						{{/each}}
+					{{/with}}
+
+					<hr>
+
+					{{#with price}}
+						<p>{{title}}</p>
+						{{#with range}}
+							<input class="col-12 form-control my-1" placeholder="{{from}}">
+							<input class="col-12 form-control my-1" placeholder="{{to}}">
+						{{/with}}
+
+						{{#with button}}
+							<a href="{{link}}" class="btn btn-outline-secondary btn-sm col-3">{{text}}</a>
+						{{/with}}
+					{{/with}}
+
+					<hr>
+
+					{{#each filterList}}
+						<p>{{title}}</p>
+						{{#each options}}
+							<div class="form-check">
+								<label class="form-check-label">{{value}}</label>
+								<input name="food" type="checkbox" class="form-check-input">
+							</div>
+						{{/each}}
+
+						<hr>
+					{{/each}}
+				{{/with}}	
+			</section>
+
+		</div>
+
+		<div class="row col-8 my-3">
+			
+			{{#each goodsList}}
+				{{> catalogItem}}
+			{{/each}}
+			
+		</div>
+	</section>
+
+{{!-- зелена зона  --}}
+
+	<div class="card text-bg-success text-center row col-12 g-1 p-3">
+		{{#with service}}
+			<h5>{{title}}</h5>
+			<p>{{description}}</p>
+			<div class="text-center">
+				{{#each buttons}}
+					<a href="{{link}}" class="btn btn-primary col-3">{{text}}</a>
+				{{/each}}
+			</div>
+			
+		{{/with}}
+	</div>
+
+	
+	<div class="row col-12">
+		{{#each footer}}
+			{{> footer_shop}}
+		{{/each}}
+	</div>
+	
+	
+
+
+</main>

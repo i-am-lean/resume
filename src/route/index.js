@@ -36,7 +36,12 @@ var footer = {
   },
 }
 
-router.get('/', function (req, res) {})
+router.get('/', function (req, res) {
+  res.render('index', {
+    layout: 'index',
+
+     })
+})
 
 router.get('/summary', function (req, res) {
   res.render('summary', {
@@ -1564,10 +1569,6 @@ router.get('/bootstrap', function (req, res) {
     //                  ↑↑ сюди вводимо JSON дані
   })
   
-
-
-  
-
 
 
 router.get('/task22', function (req, res) {
@@ -3324,6 +3325,9 @@ router.get('/shopcatalog', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
+
+
 
 
 

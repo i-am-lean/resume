@@ -1,7 +1,15 @@
 <main>
+	<div class="row col-12 m-3 gy-3">
+		
+		<a href="/shophome" class="btn btn-outline-primary text-center col-3 g-5 p-1">Return</a>
+			<div class="col-5 g-5"></div>
+		<a href="/shopreview" class="btn btn-outline-primary text-center col-3 g-5 p-1">Next</a>		
+
+	</div>
 
 	{{!-- навігація звичайна --}}
 	<div class="row col-12 card">
+		
 		{{#with navigation}}
 			<div class="nav text-center col-12 g-5 m-1 pe-2">
 				{{#each links}}
@@ -10,6 +18,7 @@
 					</div>
 				{{/each}}
 			</div>
+			
 		{{/with}}
 	</div>
 

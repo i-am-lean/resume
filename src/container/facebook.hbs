@@ -1,6 +1,91 @@
 <div>
   <main>
-	<div class="text-bg-primary p-3">
+
+	<div class="row col-12 m-3 gy-3">
+		
+		<a href="/" class="btn btn-outline-primary text-center col-3 g-5 p-1">Return to home page</a>
+			<div class="col-5 g-5"></div>
+		<a href="/task31" class="btn btn-outline-primary text-center col-3 g-5 p-1">Next page</a>		
+
+	</div>
+
+	<div class="row col-12 g-3 mt-3 ms-3  me-5 card">
+		<div class="col-12 card-header text-bg-primary">
+			<p class="text-end">{{name}}</p>
+		</div>
+
+		<div class="row col-12 card-body">
+			{{#each users}}
+				<div class="row col-12 g-1 card m-1">
+					<p class="col-12 text-start card-header">Users</p> 
+					
+					<div class="col-12 text-start card-body">
+						<div>{{name}}, {{age}} | {{gender}}</div> <br>
+						<div>ID: {{id}}</div>
+					</div>
+
+					<div class="row col-12 g-3">
+						{{#each friends}}
+							<div class="col-5 g-1 card m-1">
+								<p class="col-12 text-start card-header">Friends</p> 
+							
+								<div class="row col-12 text-start card-body">
+									<div>{{name}}, {{age}} | {{gender}}</div> <br>
+									<div>ID: {{id}}</div>
+								</div>
+
+								<div class="row col-12 g-3">
+									{{#each mutual_friends}}
+										<div class="col-5 g-1 card m-1">
+											<p class="col-12 text-start card-header">Mutual friends</p> 
+										
+											<div class="row col-12 text-start card-body">
+												<div>{{name}}, {{age}} | {{gender}}</div> <br>
+												<div>ID: {{id}}</div>
+											</div>
+										</div>
+									{{/each}}
+								</div>
+							</div>
+						{{/each}}
+					</div>
+
+					<div class="row col-12 g-3">
+						{{#each groups}}
+							<div class="col-5 g-1 card m-1">
+								<p class="col-12 text-center card-header">Groups</p> 
+							
+								<div class="row col-12 text-start card-body">
+									<div>{{name}} ({{id}})</div> <br>
+									<div>{{description}}</div>
+								</div>
+
+								<div class="row col-12 g-3">
+									{{#each members}}
+										<div class="col-5 g-1 card m-1">
+											<p class="col-12 text-start card-header">Members</p> 
+										
+											<div class="row col-12 text-start card-body">
+												<div>{{name}}, {{age}} | {{gender}}</div> <br>
+												<div>ID: {{id}}</div>
+											</div>
+										</div>
+									{{/each}}
+								</div>
+							</div>
+						{{/each}}
+					</div>
+
+
+					
+				</div> 
+
+			{{/each}}
+		</div>
+
+	</div>
+
+	{{!-- <div class="text-bg-primary p-3">
 		<section>
 			<p class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style="--bs-focus-ring-x: 10px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px">
 				{{name}}
@@ -112,6 +197,6 @@
 		<hr>
 
 		
-	</div>
+	</div> --}}
   </main>
 </div>

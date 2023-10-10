@@ -1,5 +1,27 @@
 <div>
   <main>
+
+    <div class="row col-12 m-3 gy-3">
+      
+      <a href="/" class="btn btn-outline-primary text-center col-3 g-5 p-1">Return to home page</a>
+        <div class="col-5 g-5"></div>
+      <a href="/facebook" class="btn btn-outline-primary text-center col-3 g-5 p-1">Next page</a>		
+
+    </div>
+
+    <hr class="row col-12 my-1">
+
+    <div class="row col-12 my-3 nav-tabs text-center">
+      <div class="nav">
+        {{#each tabs}}	
+          <div class="nav-item col-2 g-3">
+            <a href="{{href}}" class="btn nav-link {{#if isActive}} active {{/if}}">{{text}}</a>
+          </div>
+        {{/each}}
+      </div>
+    </div>	
+
+
     <div class='demo'>
       <div class='container'>
         <div class='row text-center'>

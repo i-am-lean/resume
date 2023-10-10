@@ -1,16 +1,20 @@
 <main class="row col-12 m-3 p-2">
-	<div class="row col-12">
 
+	<div class="row col-12 m-3 gy-3">
+		
+		<a href="/shopcart" class="btn btn-outline-primary text-center col-3 g-5 p-1">Return</a>
+			<div class="col-5 g-5"></div>
+		<a href="/shopprofile" class="btn btn-outline-primary text-center col-3 g-5 p-1">Next</a>		
+
+	</div>
+
+	<div class="card col-12">
 		{{#with navigation}}
-			<div class="row col-12">
+			<div class="nav text-center col-12 g-5 m-1 pe-2">
 				{{#each links}}
-					
-					<div class="nav col-2 g-3 my-2">
-						<div class="nav-item ">
-							<a href="{{href}}" class="nav-link ">{{text}}</a>
-						</div>
+					<div class="nav-item col-3 g-3">
+						<a href="{{href}}" class="nav-link active">{{text}}</a>
 					</div>
-										
 				{{/each}}
 			</div>
 		{{/with}}

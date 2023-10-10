@@ -1,6 +1,29 @@
 <div>
   <main>
-    <section>
+
+	<div class="row col-12 m-3 gy-3">
+		
+		<a href="/" class="btn btn-outline-primary text-center col-3 g-5 p-1">Return to home page</a>
+			<div class="col-5 g-5"></div>
+		<a href="/facebook" class="btn btn-outline-primary text-center col-3 g-5 p-1">Next page</a>		
+
+	</div>
+
+	<hr class="row col-12 my-1">
+
+	<div class="row col-12 my-3 nav-tabs text-center">
+		<div class="nav">
+			{{#each tabs}}	
+				<div class="nav-item col-2 g-3">
+					<a href="{{href}}" class="btn nav-link {{#if isActive}} active {{/if}}">{{text}}</a>
+				</div>
+			{{/each}}
+		</div>
+	</div>	
+
+
+	
+    <section class="row col-12 gy-3 ps-3">
       <center>
         <h1><b>{{name}} | {{occupation}}</b></h1>
         <div>
@@ -26,9 +49,9 @@
     </section>
 
     <hr />
-    <br />
+    
 
-    <section>
+    <section class="row col-12 gy-3 ps-3">
       <div>
 		<h2>{{> title data='Known For'}}</h2>
 		<ul>
@@ -39,10 +62,10 @@
       </div>
     </section>
 
-	<br>
+	
 	<hr>
 
-	<section>
+	<section class="row col-12 gy-3 ps-3">
 		<div>
 			<h3> {{> title data='Notable publications'}} </h3>
 		</div>
@@ -57,10 +80,10 @@
 		</div>
 	</section>
 
-	<br>
+	
 	<hr>
 
-	<section>
+	<section class="row col-12 gy-3 ps-3">
 		<div>
 			<h3> {{> title data='Parthners'}} </h3>
 		</div>
@@ -77,10 +100,10 @@
 		</div>
 	</section>
 
-	<br>
+	
 	<hr>
 
-	<section>
+	<section class="row col-12 gy-3 ps-3">
 		<div><h3>{{> title data='Awards'}}</h3></div>
 		<div>
 			<ul>
@@ -93,11 +116,11 @@
 		</div>
 	</section>
 
-	<br>
+	
 	<hr>
 	<hr>
 
-	<section>
+	<section class="row col-12 gy-3 ps-3">
 		<div>
 			<h3> {{> title data="Influences"}} </h3>
 		</div>
@@ -110,9 +133,9 @@
 		</div>
 	</section>
 
-	<br>
+	
 
-	<section>
+	<section class="row col-12 gy-3 ps-3">
 		<div>
 			<h4> {{> title data="Influenced"}} </h4>
 		</div>
@@ -125,9 +148,9 @@
 		</div>
 	</section>
 
-	<br>
 
-		<section>
+
+	<section class="row col-12 gy-3 ps-3">
 		<div>
 			<h4> {{> title data="Quotes"}} </h4>
 		</div>
@@ -140,11 +163,11 @@
 		</div>
 	</section>	
 
-	<br>
+	
 	<hr>
 	<hr>
 
-	<section>
+	<section class="row col-12 gy-3 ps-3">
 		<div>
 			<h3>{{> title data="Major discoveries"}}</h3>
 		</div>
@@ -161,10 +184,10 @@
 		</div>
 	</section>
 
-	<br>
+	
 	<hr>
 
-	<section>
+	<section class="row col-12 gy-3 ps-3">
 		<div>
 			<h3>
 				{{> title data='Contributions'}}
@@ -178,7 +201,6 @@
 			{{/with}}
 		</div>
 	</section>
-	<br>
-	<hr>
+	
   </main>
 </div>

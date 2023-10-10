@@ -16,6 +16,7 @@ var header = {
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$/місяць',
+  projectName: 'Resume project',
 }
 
 var footer = {
@@ -39,6 +40,8 @@ var footer = {
 router.get('/', function (req, res) {
   res.render('index', {
     layout: 'index',
+
+    header,
 
      })
 })
@@ -237,6 +240,39 @@ router.get('/person', function (req, res) {
   res.render('person', {
     layout: 'person',
 
+    tabs: 
+    [
+      {
+        text: 'About Einstein', 
+        href: '/bio',
+        isActive : false          
+      },
+      { 
+        text: 'About Person', 
+        href: '/person',
+        isActive : true 
+        
+      }, 
+      { 
+        text: 'Excursion', 
+        href: '/program',
+        isActive : false 
+      },
+
+      { 
+        text: 'About Toyota', 
+        href: '/car',
+        isActive : false 
+      },
+
+      { 
+        text: 'About laptop', 
+        href: '/mac',
+        isActive : false 
+      },
+      
+    ],
+
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -336,6 +372,39 @@ router.get('/program', function (req, res) {
   res.render('program', {
     layout: 'program',
 
+    tabs: 
+    [
+      {
+        text: 'About Einstein', 
+        href: '/bio',
+        isActive : false          
+      },
+      { 
+        text: 'About Person', 
+        href: '/person',
+        isActive : false 
+        
+      }, 
+      { 
+        text: 'Excursion', 
+        href: '/program',
+        isActive : true 
+      },
+
+      { 
+        text: 'About Toyota', 
+        href: '/car',
+        isActive : false 
+      },
+
+      { 
+        text: 'About laptop', 
+        href: '/mac',
+        isActive : false 
+      },
+      
+    ],
+
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -424,6 +493,39 @@ router.get('/program', function (req, res) {
 router.get('/bio', function (req, res) {
   res.render('bio', {
     layout: 'bio',
+
+    tabs: 
+    [
+      {
+        text: 'About Einstein', 
+        href: '/bio',
+        isActive : true          
+      },
+      { 
+        text: 'About Person', 
+        href: '/person',
+        isActive : false 
+        
+      }, 
+      { 
+        text: 'Excursion', 
+        href: '/program',
+        isActive : false 
+      },
+
+      { 
+        text: 'About Toyota', 
+        href: '/car',
+        isActive : false 
+      },
+
+      { 
+        text: 'About laptop', 
+        href: '/mac',
+        isActive : false 
+      },
+      
+    ],
 
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
@@ -521,6 +623,30 @@ router.get('/web', function (req, res) {
     layout: 'basic',
 
     web: {
+
+      tabs: 
+      [
+        {
+          text: 'InnovaMind', 
+          href: '/task22',
+          isActive : false          
+        },
+        { 
+          text: 'Web languages', 
+          href: '/web',
+          isActive : true 
+          
+        }, 
+        { 
+          text: 'JS', 
+          href: '/js',
+          isActive : false 
+        },
+        
+      ],
+         
+    
+
       languages: [
         {
           name: 'HTML',
@@ -1577,6 +1703,27 @@ router.get('/task22', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
     layout: 'bootstrap',
+
+    tabs: 
+      [
+        {
+          text: 'InnovaMind', 
+          href: '/task22',
+          isActive : true          
+        },
+        { 
+          text: 'Web languages', 
+          href: '/web',
+          isActive : false 
+          
+        }, 
+        { 
+          text: 'JS', 
+          href: '/js',
+          isActive : false 
+        },
+        
+      ],
     
     page_header: {
       title: 'InnovaMind',
@@ -1866,6 +2013,39 @@ router.get('/mac', function (req, res) {
   res.render('mac', {
     layout: 'basic',
 
+    tabs: 
+    [
+      {
+        text: 'About Einstein', 
+        href: '/bio',
+        isActive : false          
+      },
+      { 
+        text: 'About Person', 
+        href: '/person',
+        isActive : false 
+        
+      }, 
+      { 
+        text: 'Excursion', 
+        href: '/program',
+        isActive : false 
+      },
+
+      { 
+        text: 'About Toyota', 
+        href: '/car',
+        isActive : false 
+      },
+
+      { 
+        text: 'About laptop', 
+        href: '/mac',
+        isActive : true 
+      },
+      
+    ],
+
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
     price: 1999.99,
@@ -1954,6 +2134,39 @@ router.get('/car', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
     layout: 'basic',
+
+    tabs: 
+    [
+      {
+        text: 'About Einstein', 
+        href: '/bio',
+        isActive : false          
+      },
+      { 
+        text: 'About Person', 
+        href: '/person',
+        isActive : false 
+        
+      }, 
+      { 
+        text: 'Excursion', 
+        href: '/program',
+        isActive : false 
+      },
+
+      { 
+        text: 'About Toyota', 
+        href: '/car',
+        isActive : true 
+      },
+
+      { 
+        text: 'About laptop', 
+        href: '/mac',
+        isActive : false 
+      },
+      
+    ],
 
     make: 'Toyota',
     model: 'Camry',
@@ -2053,6 +2266,27 @@ router.get('/js', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
+
+    tabs: 
+      [
+        {
+          text: 'InnovaMind', 
+          href: '/task22',
+          isActive : false          
+        },
+        { 
+          text: 'Web languages', 
+          href: '/web',
+          isActive : false 
+          
+        }, 
+        { 
+          text: 'JS', 
+          href: '/js',
+          isActive : true 
+        },
+        
+      ],
 
     name: 'JavaScript',
     description:

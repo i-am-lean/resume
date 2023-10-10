@@ -1,454 +1,254 @@
-<div>
-  <main>
-    <section>
-      <br />
-      <div>
-        <center>
-          <h2>
-            <b>
-              <em>
-                {{make}}
-                {{model}}
-                {{year}}
-                ({{color}})
-              </em>
-            </b>
-          </h2>
-        </center>
-      </div>
+<main class="text-bg-light">
 
-      <br />
-    </section>
+  <div class="row col-12 m-3 gy-3">
+		
+		<a href="/" class="btn btn-outline-primary text-center col-3 g-5 p-1">Return to home page</a>
+			<div class="col-5 g-5"></div>
+		<a href="/facebook" class="btn btn-outline-primary text-center col-3 g-5 p-1">Next page</a>		
 
-    <br />
-    <hr />
-    <hr />
+	</div>
 
-    <section>
-      <div>
-        {{#with features}}
-          <center>
+	<hr class="row col-12 my-1">
 
-            <b>
-              Feautures
-            </b>
+	<div class="row col-12 my-3 nav-tabs text-center">
+		<div class="nav">
+			{{#each tabs}}	
+				<div class="nav-item col-2 g-3">
+					<a href="{{href}}" class="btn nav-link {{#if isActive}} active {{/if}}">{{text}}</a>
+				</div>
+			{{/each}}
+		</div>
+	</div>	
 
-          </center>
+  <section class="row col-12 g-2 my-3">
+    <div class="row col-12 text-center text-bg-secondary p-3">
+      <div class="display-1">{{make}} {{model}}</div>
+      <div class="display-6">{{year}} ({{color}})</div>
+    </div>
+  </section>
 
-          <div>
-            {{#with interior}}
+  <section class="row col-12 g-2 my-3">
+    {{#with features}}
 
-              <br />
-              <h4>Interior:</h4>
-              <br />
-
-              <div class='dropdown'>
-                {{#with seats}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
+      <div class="card row col-12 g-2 m-1 p-2">
+        {{#with interior}}
+          <div class="display-5 text-center">Interior</div>
+            <div class="row col-12 g-1 m-1 p-1">
+              {{#with seats}}
+                <div class="card row col-4 g-1 m-1 p-1">
+                  
+                  <div class="card-title text-center">
                     Seats
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>Material:
-                        {{material}}</a></li>
-                    <li><a class='dropdown-item'>Color:
-                        {{color}}</a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if heated includeZero=true}}
-                          Heated
-                        {{/if}}
-                      </a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if ventilated includeZero=true}}
-                          Ventilated
-                        {{/if}}
-                      </a></li>
-                  </ul>
-                {{/with}}
-              </div>
+                  </div>
+                  <div class="card-body">
+                    {{material}} {{color}} 
+                    {{#if heated}}<p class="badge text-bg-warning display-5 col-3 g-1 my-2">Heated</p>{{/if}}
+                    {{#if heated}}<p class="badge text-bg-success display-5 col-4 g-1 my-2">Ventilated</p>{{/if}}
+                  </div>
+                  
+                </div>
+              {{/with}}
 
-              <br />
+              {{#with dashboard}}
+                <div class="card row col-4 g-1 m-1 p-1">
+                  
+                    <div class="card-title text-center">
+                      Dashboard
+                    </div>
+                    <div class="card-body">
+                      {{material}} {{color}} <br>
+                      {{#with display}}
+                        Display: {{#if touchscreen}}<p class="badge text-bg-success text-lg display-5 col-5 g-1">Touchscreen</p>{{/if}}
+                        <ul>
+                          <li>{{type}}</li>
+                          <li>{{size}}</li>
+                          <li>{{resolution}}</li>
+                        </ul>
+                      {{/with}}
+                    </div>
+                  
+                </div>
+              {{/with}}
 
-              <div class='dropdown'>
-                {{#with dashboard}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
-                    Dashboard
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>Material:
-                        {{material}}</a></li>
-                    <li><a class='dropdown-item'>Color:
-                        {{color}}</a></li>
-                    <li><a class='dropdown-item'>
-                        {{#with display}}
-                          <details>
-                            <summary>Display</summary>
-                            Type:
-                            {{type}}
-                            <br />
-                            Size:
-                            {{size}}
-                            <br />
-                            Resolution:
-                            {{resolution}}
-                            <br />
-                            {{#if
-                              touchscreen includeZero=true
-                            }}
-                              Touchscreen
-                            {{/if}}
-                          </details>
-                        {{/with}}
-                      </a></li>
-                  </ul>
-                {{/with}}
-              </div>
+              {{#with audio}}
+                <div class="card row col-4 g-1 m-1 p-1">
+                    
+                      <div class="card-title text-center">
+                        Audio
+                      </div>
+                      <div class="card-body">
+                        <ul>
+                          <li>
+                            {{system}} <br>
+                            {{speakers}} <br>
+                            {{#if subwoofer}}<p class="badge text-bg-warning display-5 col-5 g-1 my-2">Subwoofer</p>{{/if}} <br>
+                            {{#if bluetooth}}<p class="badge text-bg-primary display-5 col-5 g-1 my-2">Bluetooth</p>{{/if}} <br>
+                            {{#if USB}}<p class="badge text-bg-success display-5 col-3 g-1 my-2">USB</p>{{/if}} <br>
+                          </li>
+                        </ul>
+                      </div>
+                    
+                </div>
+              {{/with}}
+            </div>
+          
+        {{/with}}    
+      </div>
 
-              <br />
 
-              <div class='dropdown'>
-                {{#with audio}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
-                    Audio
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>System:
-                        {{system}}</a></li>
-                    <li><a class='dropdown-item'>Speakers:
-                        {{speakers}}</a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if subwoofer includeZero=true}}
-                          Subwoofer
-                        {{/if}}
-                      </a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if bluetooth includeZero=true}}
-                          Bluetooth
-                        {{/if}}
-                      </a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if USB includeZero=true}}
-                          USB
-                        {{/if}}
-                      </a></li>
-                  </ul>
-                {{/with}}
-              </div>
+      <div class="card row col-12 g-2 m-1 p-2">
+        {{#with exterior}}
+          <div class="display-5 text-center">Exterior</div>
+            <div class="row col-12 g-1 m-1 p-2">
+              {{#with wheels}}
+                <div class="card row col-4 m-1 p-1">
+                  
+                  <div class="card-title text-center">
+                    Weels
+                  </div>
+                  <div class="card-body">
+                    {{size}} {{type}} {{color}} 
+                </div>
+                  
+                </div>
+              {{/with}}
 
-            {{/with}}
-          </div>
+              {{#with headlights}}
+                <div class="card row col-4 m-1 p-1">
+                  
+                    <div class="card-title text-center">
+                      Headlights
+                    </div>
+                    <div class="card-body">
+                      {{type}} {{brightness}} 
+                      {{#if automatic}}<p class="badge text-bg-success text-lg display-5 col-5 g-1">Automatic</p>{{/if}}
+                    </div>
+                  
+                </div>
+              {{/with}}
 
-          <br />
-          <hr />
-
-          <div>
-            {{#with exterior}}
-              <br />
-              <h4>Exterior:</h4>
-              <br />
-
-              <div class='dropdown'>
-                {{#with wheels}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
-                    Wheels
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>Size:
-                        {{size}}</a></li>
-                    <li><a class='dropdown-item'>Type:
-                        {{type}}</a></li>
-                    <li><a class='dropdown-item'>Color:
-                        {{color}}</a></li>
-
-                  </ul>
-                {{/with}}
-              </div>
-
-              <br />
-
-              <div class='dropdown'>
-                {{#with headlights}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
-                    Headlights
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>Type:
-                        {{type}}</a></li>
-                    <li><a class='dropdown-item'>Brightness:
-                        {{brightness}}</a></li>
-
-                    <li><a class='dropdown-item'>
-                        {{#if automatic includeZero=true}}
-                          Automatic
-                        {{/if}}
-                      </a></li>
-
-                  </ul>
-                {{/with}}
-              </div>
-
-              <br />
-
-              <div class='dropdown'>
-                {{#with sunroof}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
+              {{#with sunroof}}
+                <div class="card row col-4 m-1 p-1">
+                    
+                  <div class="card-title text-center">
                     Sunroof
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>Type:
-                        {{type}}</a></li>
-                    <li><a class='dropdown-item'>Size:
-                        {{size}}</a></li>
+                  </div>
+                  <div class="card-body">
+                    {{type}} {{size}}
+                    {{#if automatic}}<p class="badge text-bg-success text-lg display-5 col-5 g-1">Automatic</p>{{/if}}
+                  </div>
+                      
+                    
+                </div>
+              {{/with}}
+            </div>
+          
+        {{/with}}
+      </div>
 
-                    <li><a class='dropdown-item'>
-                        {{#if automatic includeZero=true}}
-                          Automatic
-                        {{/if}}
-                      </a></li>
-
-                  </ul>
-                {{/with}}
-              </div>
-
-            {{/with}}
-          </div>
-
-          <br />
-          <hr />
-
-          <div>
-            {{#with safety}}
-              <br />
-              <h4>Safety:</h4>
-              <br />
-
-              <div class='dropdown'>
-                {{#with airbags}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
+      <div class="card row col-12 g-2 m-1 p-2">
+        {{#with safety}}
+          <div class="display-5 text-center">Safety</div>
+            <div class="row col-12 g-1 m-1 p-2">
+              {{#with airbags}}
+                <div class="card row col-4 m-1 p-1">
+                  
+                  <div class="card-title text-center">
                     Airbags
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>Front:
-                        {{front}}</a></li>
-                    <li><a class='dropdown-item'>Side:
-                        {{side}}</a></li>
-                    <li><a class='dropdown-item'>Knee:
-                        {{knee}}</a></li>
-                    <li><a class='dropdown-item'>Rear:
-                        {{rear}}</a></li>
+                  </div>
+                  <div class="card-body">
+                    
+                      Front: {{front}} <br>
+                      Side: {{side}} <br>
+                      Knee: {{knee}} <br>
+                      Rear: {{rear}} <br>
+                   
+                </div>
+                  
+                </div>
+              {{/with}}
 
-                  </ul>
-                {{/with}}
-              </div>
+              {{#with assistance}}
+                <div class="card row col-4 m-1 p-1">
+                  
+                    <div class="card-title text-center">
+                      Assistance
+                    </div>
+                    <div class="card-body">
+                      
+                      {{#if blind_spot_monitoring}}<p class="badge text-bg-success text-lg display-5 col-12 g-1">Blind spot monitoring</p>{{/if}}
+                      {{#if rear_cross_traffic_alert}}<p class="badge text-bg-warning text-lg display-5 col-12 g-1">Rear cross traffic alert</p>{{/if}}
+                      {{#if lane_departure_warning}}<p class="badge text-bg-danger text-lg display-5 col-12 g-1">Lane departure warning</p>{{/if}}
+                      {{#if adaptive_cruise_control}}<p class="badge text-bg-success text-lg display-5 col-12 g-1">Adaptive cruise control</p>{{/if}}
+                      {{#if collision_warning}}<p class="badge text-bg-warning text-lg display-5 col-12 g-1">Collision warning</p>{{/if}}
+                    </div>
+                  
+                </div>
+              {{/with}}
 
-              <br />
-
-              <div class='dropdown'>
-                {{#with assistance}}
-                  <button
-                    class='btn btn-secondary dropdown-toggle'
-                    type='button'
-                    data-bs-toggle='dropdown'
-                    aria-expanded='false'
-                  >
-                    Assistance
-                  </button>
-                  <ul class='dropdown-menu'>
-                    <li><a class='dropdown-item'>
-                        {{#if
-                          blind_spot_monitoring
-                          includeZero=true
-                        }}
-                          Blind spot monitoring
-                        {{/if}}
-                      </a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if
-                          rear_cross_traffic_alert
-                          includeZero=true
-                        }}
-                          Rear cross traffic alert
-                        {{/if}}
-                      </a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if
-                          lane_departure_warning
-                          includeZero=true
-                        }}
-                          Lane departure warning
-                        {{/if}}
-                      </a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if
-                          adaptive_cruise_control
-                          includeZero=true
-                        }}
-                          Adaptive cruize control
-                        {{/if}}
-                      </a></li>
-                    <li><a class='dropdown-item'>
-                        {{#if
-                          collision_warning includeZero=true
-                        }}
-                          Collision warning
-                        {{/if}}
-                      </a></li>
-
-                  </ul>
-                {{/with}}
-              </div>
-            {{/with}}
-          </div>
-          <hr />
-          <br />
-
-          <div>
-
-          </div>
-
+              {{#with sunroof}}
+                <div class="card row col-4 m-1 p-1">
+                    
+                  <div class="card-title text-center">
+                    Sunroof
+                  </div>
+                  <div class="card-body">
+                    {{type}} {{size}}
+                    {{#if automatic}}<p class="badge text-bg-success text-lg display-5 col-5 g-1">Automatic</p>{{/if}}
+                  </div>
+                      
+                    
+                </div>
+              {{/with}}
+            </div>
+          
         {{/with}}
       </div>
-    </section>
 
-    <hr />
-    <hr />
-    <br />
+    {{/with}}
+  </section>
 
-    <section>
-      <div class='dropdown'>
-        {{#with engine}}
-          <button
-            class='btn btn-secondary dropdown-toggle'
-            type='button'
-            data-bs-toggle='dropdown'
-            aria-expanded='false'
-          >
-            <center><b>Engine:</b></center>
-          </button>
-          <ul class='dropdown-menu'>
-            <li><a class='dropdown-item'>Type:
-                {{type}}</a></li>
-            <li><a class='dropdown-item'>Displacement:
-                {{displacement}}</a></li>
-            <li><a class='dropdown-item'>Horsepower:
-                {{horsepower}}</a></li>
-            <li><a class='dropdown-item'>Torque:
-                {{torque}}</a></li>
-            <li><a class='dropdown-item'>
-                {{#with transmission}}
-                  <details>
-                    <summary>Transmission</summary>
-                    <p>Type: {{type}}</p>
-                    <p>Gears: {{gears}}</p>
-                  </details>
-                {{/with}}
-              </a></li>
-          </ul>
+  <section class="row col-12 g-2 my-3">
+    <div class="card row col-5 g-5 m-1">
+      {{#with engine}}
+          <div class="display-7 text-center">Engine</div> <br>
+        {{displacement}} | {{horsepower}} | {{torque}}
+        {{#with transmission}}
+          <div class="display-7 text-center">Transmission</div> <br>
+          {{type}} ({{gears}})
         {{/with}}
-      </div>
-    </section>
+      {{/with}}
+    </div>
 
-    <hr />
-    <hr />
-    <br />
+    <div class="card row col-5 g-5 m-1">
+      {{#with fuel_economy}}
+          <div class="display-6 text-center">Fuel economy</div> <br>
+          City: {{city}} <br>
+          Highway: {{highway}} <br>
+          Combined: {{combined}}
+      {{/with}}
+    </div>
 
-    <section>
-      <div class='dropdown'>
-        {{#with fuel_economy}}
-          <button
-            class='btn btn-secondary dropdown-toggle'
-            type='button'
-            data-bs-toggle='dropdown'
-            aria-expanded='false'
-          >
-            <center><b>Fuel economy:</b></center>
-          </button>
-          <ul class='dropdown-menu'>
-            <li><a class='dropdown-item'>City:
-                {{city}}</a></li>
-            <li><a class='dropdown-item'>Highway:
-                {{highway}}</a></li>
-            <li><a class='dropdown-item'>Combined:
-                {{combined}}</a></li>
-          </ul>
-        {{/with}}
-      </div>
-    </section>
+    <div class="card row col-12 g-5 m-1">
+      {{#with price}}
+          <div class="display-5 text-center">Price</div> <br>
+          <center>
+            Base: {{base}} <br>
+            Destination: {{destination}} <br>
+          </center>
+          
+          {{#with options}}
+            <div class="display-7 text-center">Options</div> <br>
+            <center>
+              Navigation: {{navigation}}<br>
+              Moonroof: {{moonroof}}<br>
+              Premium paint: {{premium_paint}}<br>
+            </center>
+            
+          {{/with}}
+      {{/with}}
+    </div>
+    
+  </section>
 
-    <hr />
-    <hr />
-    <br />
-
-    <section>
-      <div class='dropdown'>
-        {{#with price}}
-          <button
-            class='btn btn-secondary dropdown-toggle'
-            type='button'
-            data-bs-toggle='dropdown'
-            aria-expanded='false'
-          >
-            <center><b>Price:</b></center>
-          </button>
-          <ul class='dropdown-menu'>
-            <li><a class='dropdown-item'>Base:
-                {{base}}</a></li>
-            <li><a class='dropdown-item'>Destination:
-                {{destination}}</a></li>
-            <li><a class='dropdown-item'>
-                {{#with options}}
-                  <details>
-                    <summary>Options</summary>
-                    <p>Navigation: {{navigation}}</p>
-                    <p>Moonroof: {{moonroof}}</p>
-                    <p>Premium paint: {{premium_paint}}</p>
-                  </details>
-                {{/with}}
-              </a></li>
-            <li><a class='dropdown-item'>Total:
-                {{total}}</a></li>
-          </ul>
-        {{/with}}
-      </div>
-    </section>
-
-    <br />
-    <hr />
-    <hr />
-
-  </main>
-</div>
+</main>
